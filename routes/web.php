@@ -25,6 +25,14 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [Home::class, 'render'])->name('home');
 
 Route::get('/product/{product_id}', [ProductDetails::class, 'render'])->name('product.details');
+Route::get('/payment/{productId}', [PaymentController::class, 'showPaymentForm'])->name('payment.form');
+Route::post('/payment/submit', [PaymentController::class, 'processPayment'])->name('payment.submit');
+
+Route::get('/admin/login', [AdminController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.login.submit');
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
+});
 
 Route::post('/add-to-cart', [Cart::class, 'addToCart'])->name('cart.add');
 Route::post('/inc-qty', [Cart::class, 'incQty'])->name('qty.up');
