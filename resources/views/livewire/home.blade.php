@@ -2,7 +2,7 @@
     <section class="mt-50 mb-50">
         <div class="container">
             <div class="row">
-                @include('livewire.sidebar')
+                @include('livewire.sidebar') 
                 <div class="col-lg-9">   
                         
                         <!DOCTYPE html>
