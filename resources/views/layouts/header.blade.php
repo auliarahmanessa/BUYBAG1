@@ -48,6 +48,8 @@
                                 <a href="{{ route('register') }}" class="btn btn-sm btn-default">Register</a>
                                 @endif
                                 @endauth
+                                <a href="{{ route('admin.login') }}" class="btn btn-sm btn-primary">Log in as Admin</a>                        
+
                                 <div class="header-action-icon-2 ml-10">
                                     <a class="mini-cart-icon" href="{{ route('cart') }}">
                                         {{-- <img alt="BUYBAG" src="{{ asset('assets/imgs/theme/icons/icon-cart.svg') }}"> --}}
@@ -83,7 +85,7 @@
                                         </ul>
                                         <div class="shopping-cart-footer">
                                             <div class="shopping-cart-total">
-                                                <h4>Total <span>${{Cart::total()}}</span></h4>
+                                                <h4>Total <span>{{Cart::total()}}</span></h4>
                                             </div>
                                             <div class="shopping-cart-button">
                                                 <a href="{{ route('cart') }}" class="btn btn-sm btn-secondary">View cart</a>
