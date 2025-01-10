@@ -3,49 +3,7 @@
         <div class="container">
             <div class="row">
                 @include('livewire.sidebar')
-                <div class="col-lg-9">
-                    
-                    {{-- <div class="shop-product-fillter"> --}}
-                        {{-- <div class="totall-product">
-                            <p> We found <strong class="text-brand">{{ $products->total() }}</strong> items for you!</p>
-                        </div> --}}
-                        {{-- <div class="sort-by-product-area">
-                            <div class="sort-by-cover">
-                                <div class="sort-by-product-wrap">
-                                    <div class="sort-by">
-                                        <span><i class="fi-rs-apps-sort"></i>Sort by:</span>
-                                    </div>
-                                    <div class="sort-by-dropdown-wrap">
-                                        <span>
-                                            @if ($sort === 'latest')
-                                                Latest: New Released
-                                            @elseif ($sort === 'low-to-high')
-                                                Price: Low to High
-                                            @elseif ($sort === 'high-to-low')
-                                                Price: High to Low
-                                            @else
-                                                Default Sorting
-                                            @endif
-                                            <i class="fi-rs-angle-small-down"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="sort-by-dropdown">
-                                    <ul>
-                                        <li><a class="{{ $sort === 'latest' ? 'active' : '' }}"
-                                                href="{{ url()->current() }}?{{ http_build_query(array_merge(request()->query(), ['sort' => 'latest'])) }}">Latest:
-                                                New Released</a></li>
-                                        <li><a class="{{ $sort === 'low-to-high' ? 'active' : '' }}"
-                                                href="{{ url()->current() }}?{{ http_build_query(array_merge(request()->query(), ['sort' => 'low-to-high'])) }}">Price:
-                                                Low to High</a></li>
-                                        <li><a class="{{ $sort === 'high-to-low' ? 'active' : '' }}"
-                                                href="{{ url()->current() }}?{{ http_build_query(array_merge(request()->query(), ['sort' => 'high-to-low'])) }}">Price:
-                                                High to Low</a></li>
-                                        <li><a href="{{ route('home') }}">Default Sorting</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div> --}}   
+                <div class="col-lg-9">   
                         
                         <!DOCTYPE html>
                         <html lang="en">
@@ -112,7 +70,7 @@
                                 </div>
                                 <div class="catalog-title">Sheena bag</div>
                                 <div class="cart-icon">
-                                    <a href="https://example.com/cart1" target="_blank">🛒 buy me</a>
+                                    <a href="{{ route('payment.form', 1) }}">🛒 buy me</a> <!-- Produk 1 -->
                                 </div>
                             </div>
                         
@@ -125,7 +83,7 @@
                                 </div>
                                 <div class="catalog-title">Pistachio bag</div>
                                 <div class="cart-icon">
-                                    <a href="https://example.com/cart2" target="_blank">🛒 buy me</a>
+                                    <a href="{{ route('payment.form', 2) }}">🛒 buy me</a> <!-- Produk 2 -->
                                 </div>
                             </div>
                         
@@ -138,7 +96,7 @@
                                 </div>
                                 <div class="catalog-title">Sling bag</div>
                                 <div class="cart-icon">
-                                    <a href="https://example.com/cart3" target="_blank">🛒 buy me</a>
+                                    <a href="{{ route('payment.form', 3) }}">🛒 buy me</a> <!-- Produk 3 -->
                                 </div>
                             </div>
                         </div>
