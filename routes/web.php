@@ -10,6 +10,8 @@ use App\Http\Livewire\ProductDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +35,8 @@ Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.logi
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
 });
+
+Route::get('/admin', [AdminController::class, 'index']);
 
 Route::post('/add-to-cart', [Cart::class, 'addToCart'])->name('cart.add');
 Route::post('/inc-qty', [Cart::class, 'incQty'])->name('qty.up');
